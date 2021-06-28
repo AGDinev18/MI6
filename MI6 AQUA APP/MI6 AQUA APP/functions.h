@@ -12,7 +12,7 @@ void removeBeach(std::vector<Beach>& beaches);
 
 void editBeach(std::vector<Beach>& beaches);
 
-void displayBeach(std::vector<Beach>& beaches);
+void displayBeach(Beach beach);
 
 void displayAllBeaches(std::vector<Beach>& beaches);
 
