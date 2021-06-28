@@ -10,7 +10,11 @@ using namespace std;
 int main()
 {
 	vector<Beach> beaches;
-	menu(beaches);
+	bool doMenu = 1;
+	while (doMenu)
+	{
+		doMenu = menu(beaches);
+	}
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
