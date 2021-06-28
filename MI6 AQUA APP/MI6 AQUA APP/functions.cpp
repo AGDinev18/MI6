@@ -102,6 +102,7 @@ void removeBeach(vector<Beach>& beaches)
 {
 	string name_;
 	cout << "\nEnter the name of the beach: ";
+	cin >> name_;
 	for (size_t i = 0; i < beaches.size(); i++)
 	{
 		if (beaches[i].returnName() == name_)
@@ -159,6 +160,7 @@ void editBeach(vector<Beach>& beaches)
 	case 4:
 		cout << "\nEnter new price for sunbed: ";
 		cin >> sunbedPrice_;
+		beaches[id].setSunbedPrice(sunbedPrice_);
 		break;
 	case 5: 
 		cout << "\nEnter new permission of swimming: ";
