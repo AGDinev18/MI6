@@ -43,6 +43,17 @@ void validInputForChoice(string& choice, int min, int max)
 	}
 }
 
+void editMenu()
+{
+	cout << "\n|--------------------------------------------|" << endl;
+	cout << "|                    MENU                    |" << endl;
+	cout << "| 1. Change the name                         |" << endl;
+	cout << "| 2. Change the groundSwell state            |" << endl;
+	cout << "| 3. Change the umbrella price               |" << endl;
+	cout << "| 4. Change the swimming permission          |" << endl;
+	cout << "| 5. Change the flag                         |" << endl;
+	cout << "|--------------------------------------------|" << endl;
+}
 
 void addBeach(vector<Beach>& beaches)
 {
@@ -54,22 +65,22 @@ void addBeach(vector<Beach>& beaches)
 	bool swimmingPermission;
 	int choice;
 	Flag flag;
-	cout << "Enter name: ";
+	cout << "\nEnter name: ";
 	cin >> name;
 	beach.name = name;
-	cout << "Enter groundSwell: ";
+	cout << "Enter ground-swell: ";
 	cin >> groundSwell;
 	beach.setGroundSwell(groundSwell);
-	cout << "Enter beachUmbrellaPrice: ";
+	cout << "Enter umbrella price: ";
 	cin >> beachUmbrellaPrice;
 	beach.setBeachUmbrellaPrice(beachUmbrellaPrice);
-	cout << "Enter sunbedPrice: ";
+	cout << "Enter sunbed price: ";
 	cin >> sunbedPrice;
 	beach.setSunbedPrice(sunbedPrice);
-	cout << "Enter swimmingPermission: ";
+	cout << "Enter swimming permission: ";
 	cin >> swimmingPermission;
 	beach.setSwimmingPermission(swimmingPermission);
-	cout << "Enter flag \n1. Green\n2. Yellow\n3. Red";
+	cout << "\nEnter flag \n1. Green\n2. Yellow\n3. Red";
 	cin >> choice;
 	switch (choice)
 	{
@@ -89,7 +100,7 @@ void addBeach(vector<Beach>& beaches)
 void removeBeach(vector<Beach>& beaches)
 {
 	string name;
-	cout << "Enter the name of the beach: ";
+	cout << "\nEnter the name of the beach: ";
 	for (size_t i = 0; i < beaches.size(); i++)
 	{
 		if (beaches[i].name == name)
@@ -100,9 +111,69 @@ void removeBeach(vector<Beach>& beaches)
 	}
 }
 
+int getIdByName(vector<Beach>& beaches,string name)
+{
+	int id = -1;
+	for (size_t i = 0; i < beaches.size(); i++)
+	{
+		if (beaches[i].name == name)
+		{
+			id = i;
+		}
+	}
+	return id;
+}
+
 void editBeach(vector<Beach>& beaches)
 {
-
+	string name;
+	cout << "\nEnter the name of the beach: ";
+	cin >> name;
+	int id = getIdByName(beaches, name);
+	bool groundSwell;
+	double beachUmbrellaPrice;
+	double sunbedPrice;
+	bool swimmingPermission;
+	Flag flag;
+	string temp;
+	editMenu();
+	validInputForChoice(temp, 1, 6);
+	stringstream sstream(temp);
+	int choice = 0;
+	sstream >> choice;
+	switch (choice)
+	{
+	case 1: cout << "\nEnter a name for the beach: ";
+		cin >> name;
+		beaches[id].name = name;
+		break;
+	case 2: cout << "\nEnter new ground-swell state: ";
+		cin >> groundSwell;
+		beaches[id].setGroundSwell(groundSwell);
+		break;
+	case 3: cout << "\nEnter new price for umbrella: ";
+		cin >> beachUmbrellaPrice;
+		beaches[id].setBeachUmbrellaPrice(beachUmbrellaPrice);
+		break;
+	case 4: cout << "\nEnter new permission of swimming: ";
+		cin >> swimmingPermission;
+		beaches[id].setSwimmingPermission(swimmingPermission);
+		break;
+	case 5: cout << "\nEnter new flag \n1. Green\n2. Yellow\n3. Red";
+		cin >> choice;
+		switch (choice)
+		{
+		case 1: flag = green;
+			break;
+		case 2: flag = yellow;
+			break;
+		case 3: flag = red;
+			break;
+		default:
+			break;
+		}
+		beaches[id].setSwimmingFlag(flag);
+	}
 }
 
 void displayBeach(vector<Beach>& beaches)
@@ -118,7 +189,7 @@ void displayAllBeaches(vector<Beach>& beaches)
 bool menu(vector<Beach>& beaches)
 {
 	string temp;
-	cout << "|--------------------------------------------|" << endl;
+	cout << "\n|--------------------------------------------|" << endl;
 	cout << "|                    MENU                    |" << endl;
 	cout << "| 1. Add a beach                             |" << endl;
 	cout << "| 2. Remove a beach                          |" << endl;

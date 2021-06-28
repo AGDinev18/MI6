@@ -4,6 +4,8 @@
 
 void validInputForChoice(std::string& choice, int min, int max);
 
+void editMenu();
+
 void addBeach(std::vector<Beach>& beaches);
 
 void removeBeach(std::vector<Beach>& beaches);
