@@ -2,11 +2,14 @@
 //
 
 #include <iostream>
+#include <vector>
 #include "functions.h"
+#include "Water.h"
+using namespace std;
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	vector<Water> water;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
