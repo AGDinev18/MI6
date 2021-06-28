@@ -4,12 +4,13 @@
 #include <iostream>
 #include <vector>
 #include "functions.h"
-#include "Water.h"
+#include "Beach.h"
 using namespace std;
 
 int main()
 {
-	vector<Water> water;
+	vector<Beach> beaches;
+	menu(beaches);
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

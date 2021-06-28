@@ -26,7 +26,7 @@
     <ClInclude Include="functions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Water.h">
+    <ClInclude Include="Beach.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

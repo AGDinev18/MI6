@@ -1,5 +1,6 @@
 #pragma once
-class Water
+#include <iostream>
+class Beach
 {
 public:
 	void setQuantity(float x)
