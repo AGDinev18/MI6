@@ -351,9 +351,14 @@ input, select, textarea {
 	.logo{
 		margin-left: -1600px;
 	}
+	.logo1{
+		margin-left: -1600px;
+		margin-bottom: 20px;
+	}
 	.image {
 		display: inline-block;
 		outline: 0;
+
 	}
 
 		.image img {
@@ -761,7 +766,9 @@ input, select, textarea {
 	#nav {
 
 		margin-top: -90px;	
+		margin-bottom: 20px;
 	}
+	
 
 		#nav > ul {
 			margin: 0;
